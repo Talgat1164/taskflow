@@ -1,0 +1,113 @@
+@import '../../../../styles.scss';
+
+.login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: $spacing-huge;
+}
+
+.logo {
+  font-size: 48px;
+  font-weight: bold;
+  color: $primary-color-light;
+  text-shadow: 2px 2px $secondary-color-light;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-family: $font-primary;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: $spacing-medium;
+  background-color: $background-color-light;
+  border-radius: 10px;
+  box-shadow: $box-shadow-light;
+  max-width: 400px;
+  width: 90%;
+}
+
+.login-header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: $spacing-medium;
+  color: $primary-color-light;
+}
+
+.login-input {
+  padding: $spacing-small;
+  margin-bottom: $spacing-small;
+  border: 1px solid $secondary-color-light;
+  border-radius: 5px;
+  width: 100%;
+  font-size: $font-size-medium;
+}
+
+.login-submit-button {
+  padding: $spacing-small;
+  margin-top: $spacing-medium;
+  border: none;
+  border-radius: 5px;
+  background-color: $primary-color-light;
+  color: $background-color-light;
+  font-size: $font-size-medium;
+  cursor: pointer;
+}
+
+.bottom-form-links {
+  margin-top: $spacing-medium;
+  font-size: $font-size-medium;
+}
+
+.register-link {
+  color: $primary-color-light;
+}
+
+/* Адаптивные стили для формы входа */
+@media only screen and (max-width: $tablet-width) {
+  .form-container {
+    max-width: 300px;
+  }
+
+  .logo {
+    font-size: $font-size-large;
+  }
+
+  .login-input {
+    font-size: $font-size-medium;
+  }
+
+  .login-submit-button {
+    font-size: $font-size-medium;
+  }
+
+  .bottom-form-links {
+    font-size: $font-size-small;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .form-container {
+    max-width: 300px;
+  }
+
+  .login-header {
+    font-size: $font-size-large;
+  }
+
+  .login-input {
+    font-size: $font-size-small;
+  }
+
+  .login-submit-button {
+    font-size: $font-size-small;
+  }
+
+  .bottom-form-links {
+    font-size: $font-size-small;
+  }
+}

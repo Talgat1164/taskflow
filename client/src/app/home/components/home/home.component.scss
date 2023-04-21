@@ -1,0 +1,166 @@
+@import '../../../../styles.scss';
+
+.logo {
+    font-size: $font-size-large;
+    font-weight: bold;
+    color: $primary-color-light;
+    text-shadow: 1px 1px $secondary-color-light;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-family: $font-primary;
+}
+
+.btn {
+    background: $btn-bgcolor-light;
+    color: $btn-color-light;
+    box-shadow: $box-shadow-light;
+    border-radius: $border-radius;
+    padding: $btn-pad-v $btn-pad-h;
+}
+
+.home-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $spacing-medium $spacing-large;
+    background-color: $background-color-light;
+    box-shadow: $box-shadow-light;
+
+  }
+  
+  .home-header-login, .home-header-register {
+    font-size: $font-size-medium;
+    text-decoration: none;
+    margin-left: $spacing-medium;
+  }
+  
+  .home-hero {
+    background-color: $primary-color-light;
+    color: #fff;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
+  }
+  
+  .home-container {
+    max-width: $desktop-width;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: $spacing-huge $spacing-large;
+  }
+
+  .home-hero .home-container {
+    color: $background-color-light;
+  }
+  
+  .home-title {
+    font-size: $font-size-large;
+    font-weight: bold;
+    margin-bottom: $spacing-medium;
+  }
+  
+  .home-description {
+    font-size: $font-size-medium;
+    color: $text-color-light;
+    margin-bottom: $spacing-large;
+  }
+  
+  .home-team, .home-information, .home-workflow {
+    background-color: $background-color-light;
+    color: $text-color-light;
+  }
+  
+  .home-container.team-container, .home-container.information-container, .home-container.workflow-container {
+    padding: $spacing-huge $spacing-large;
+    flex-direction: row-reverse;
+  }
+  
+  .home-container.team-container .home-title, .home-container.information-container .home-title, .home-container.workflow-container .home-title {
+    color: $primary-color-light;
+  }
+  
+  .home-container.team-container .home-description, .home-container.information-container .home-description, .home-container.workflow-container .home-description {
+    margin-bottom: 0;
+  }
+  
+  .home-container.team-container .team-image, .home-container.information-container img, .home-container.workflow-container .workflow-image {
+    width: 100%;
+    max-width: 500px;
+    margin-top: $spacing-large;
+  }
+  
+  .workflow-left-part {
+    max-width: 600px;
+  }
+  
+  .workflow-left-part ul {
+    list-style: none;
+    margin-left: 0;
+    margin-top: $spacing-large;
+  }
+  
+  .workflow-left-part li {
+    margin-bottom: $spacing-small;
+  }
+  
+  // Медиа-запросы
+  @media only screen and (max-width: $tablet-width) {
+    .home-container {
+      padding: $spacing-huge $spacing-medium;
+    }
+  
+    .home-title {
+      font-size: $font-size-medium;
+    }
+  
+    .home-description {
+      font-size: $font-size-small;
+    }
+  
+    .home-container.team-container, .home-container.information-container, .home-container.workflow-container {
+      flex-direction: column;
+    }
+  
+    .home-container.team-container .team-image, .home-container.information-container img, .home-container.workflow-container .workflow-image {
+      margin-top: $spacing-large;
+    }
+  
+    .workflow-left-part {
+      max-width: none;
+      margin-bottom: $spacing-large;
+    }
+  
+    .home-container.workflow-container {
+      flex-direction: column-reverse;
+   
+    }
+
+    @media only screen and (max-width: $mobile-width) {
+    .home-container {
+    padding: $spacing-large $spacing-small;
+    }
+    
+    .home-title {
+    font-size: $font-size-small;
+    }
+    
+    .home-description {
+    font-size: $font-size-small;
+    margin-bottom: $spacing-medium;
+    }
+    
+    .home-header-home-link {
+    font-size: $font-size-medium;
+    }
+    
+    .home-header-login, .home-header-register {
+    font-size: $font-size-small;
+    margin-left: $spacing-small;
+    }
+    
+    .home-container.team-container .team-image, .home-container.information-container img, .home-container.workflow-container .workflow-image {
+    margin-top: $spacing-medium;
+    }
+    }  
+}
