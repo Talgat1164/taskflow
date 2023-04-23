@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { HomeModule } from './home/home.module';
 import { BoardsModule } from './boards/boards.module';
+import { BoardModule } from './board/board.module';
 import { AuthInterceptor } from './auth/services/authinterceptor.service';
 
 @NgModule({
