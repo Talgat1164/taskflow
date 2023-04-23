@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 
 import { AuthModule } from './auth/auth.module';
 import { HomeModule } from './home/home.module';
+import { BoardsModule } from './boards/boards.module';
 import { AuthInterceptor } from './auth/services/authinterceptor.service';
 
 @NgModule({
@@ -19,6 +20,7 @@ import { AuthInterceptor } from './auth/services/authinterceptor.service';
     HttpClientModule,
     AuthModule, 
     HomeModule,
+    BoardsModule,
   ],
   providers: [
     {

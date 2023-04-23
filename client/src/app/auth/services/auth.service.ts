@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, map, filter, Observable, throwError  } from "rxjs";
-import { catchError } from 'rxjs/operators';    
 import { HttpClient } from "@angular/common/http";
 
 import { CurrentUserInterface } from "../types/currentUser.interface"; 
@@ -45,5 +44,10 @@ export class AuthService {
 
     setCurrentUser(currentUser: CurrentUserInterface | null): void {
         this.currentUser$.next(currentUser);
+    }
+
+    logout(): void {
+        localStorage.removeItem('token');
+        this.currentUser$.next(null);
     }
 }

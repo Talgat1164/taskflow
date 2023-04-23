@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AuthService } from './services/auth.service';
+import { AuthGuardService } from './services/authGuard.service';
 
 const routes: Routes = [
   {
@@ -28,6 +28,6 @@ const routes: Routes = [
     ReactiveFormsModule,
     RouterModule.forChild(routes),
   ], 
-  providers: [AuthService]
+  providers: [AuthService, AuthGuardService]
 })
 export class AuthModule { }

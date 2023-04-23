@@ -1,0 +1,91 @@
+@import '../../../../styles.scss';
+
+.boards-page-container {
+    display: flex;
+    background-color: $background-color-light;
+    color: $text-color-light;
+    font-family: $font-primary;
+}
+  
+.home-left-sidebar-container {
+    width: 20%;
+    padding: $spacing-large;
+    background-color: $secondary-color-light;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-medium;
+}
+  
+.boards-side-menu-option {
+    text-decoration: none;
+    color: $text-color-light;
+    padding: $spacing-tiny $spacing-small;
+    border-radius: $border-radius;
+    transition: background-color 0.3s;
+  
+    &:hover,
+    &.boards-side-menu-option-selected {
+      background-color: $primary-color-light;
+      color: $btn-color-light;
+    }
+}
+  
+.boards-section-container {
+    width: 80%;
+    padding: $spacing-large;
+}
+  
+.my-boards-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-medium;
+}
+  
+.boards-page-header-name {
+    font-size: $font-size-large;
+    font-family: $font-secondary;
+}
+
+.board-tile-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: $spacing-medium;
+}
+  
+.create-board-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: $btn-border-radius;
+    border: 1px solid $secondary-color-light;
+    padding: 5px 0px;
+    transition: background-color 0.3s;
+  
+    &:hover {
+        border: 1px solid #000;
+    }
+}
+  
+.board-tile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $secondary-color-light;
+    color: $text-color-light;
+    border-radius: $border-radius;
+    padding: $spacing-medium;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  
+    &:hover {
+      background-color: $primary-color-light;
+      color: $btn-color-light;
+    }
+}
+  
+.board-tile-details-name {
+    font-size: $font-size-medium;
+    font-family: $font-secondary;
+}
+  

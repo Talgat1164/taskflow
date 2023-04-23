@@ -1,0 +1,65 @@
+@import "../../../../../styles.scss";
+
+.inline-form-container {
+    display: flex;
+    align-items: center;
+    background-color: $background-color-light;
+    color: $text-color-light;
+    border-radius: $border-radius;
+
+    cursor: pointer;
+    transition: background-color 0.3s;
+  
+    &.inline-form-container-editing {
+    }
+  }
+  
+  .inline-form-text {
+    font-family: $font-primary;
+    font-size: $font-size-medium;
+  }
+  
+  .inline-form {
+    display: flex;
+    flex-grow: 1;
+    margin: 0;
+  }
+  
+  .inline-form-input {
+    font-family: $font-primary;
+    font-size: $font-size-medium;
+    color: $text-color-light;
+    background-color: transparent;
+    border: 1px solid $secondary-color-light;
+    flex-grow: 1;
+    margin-right: $spacing-small;
+    padding: 5px;
+    &:focus {
+      box-shadow: $box-shadow-light;
+    }
+  
+    &::placeholder {
+      color: rgba($text-color-light, 0.5);
+    }
+  }
+  
+  .inline-form-button {
+    font-family: $font-secondary;
+    font-size: $font-size-small;
+    color: $btn-color-light;
+    background-color: $btn-bgcolor-light;
+    border: none;
+    border-radius: $btn-border-radius;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  
+    &:hover {
+      background-color: darken($btn-bgcolor-light, 10%);
+    }
+  
+    &:disabled {
+      background-color: lighten($btn-bgcolor-light, 10%);
+      cursor: not-allowed;
+    }
+  }
+  
