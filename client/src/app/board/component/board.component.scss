@@ -1,0 +1,60 @@
+@import "../../../assets/variables.scss";
+
+.board {
+  background: $background-color-light;
+  height: 100vh;
+  overflow-x: auto;
+}
+
+.board-header-container {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $font-size-large;
+  color: $text-color-light;
+}
+
+.columns {
+  display: flex;
+}
+
+.column {
+  background: $secondary-color-light;
+  padding: 8px;
+  border-radius: 4px;
+  width: $desktop-task-width;
+  margin: 0 4px;
+  max-height: $column-desktop-max-height;
+  overflow-y: auto;
+  min-width: $column-desktop-width;
+  align-self: flex-start;
+}
+
+.column-title {
+  font-size: $font-size-mediumPlus;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.task {
+  border: 1px solid rgb(9 30 66 / 25%);
+  cursor: pointer;
+  max-width: 300px;
+  min-height: 20px;
+  color: #3d4852;
+  background-color: $background-color-light;
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  margin-bottom: 8px;
+  transition: background-color 0.3s;
+}
+
+.task:hover {
+  background-color: $primary-color-light;
+  color: $btn-color-light;
+}

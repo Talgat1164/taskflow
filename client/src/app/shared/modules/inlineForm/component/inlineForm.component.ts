@@ -4,8 +4,6 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 @Component({
   selector: 'inline-form',
   templateUrl: './inlineForm.component.html',
-  styleUrls: ['./inlineForm.component.scss']
-
 })
 export class InlineFormComponent {
   @Input() title: string = '';

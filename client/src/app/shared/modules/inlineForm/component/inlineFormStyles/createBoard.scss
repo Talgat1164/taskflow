@@ -1,0 +1,41 @@
+@import "../../../../../../assets/variables.scss";
+
+
+.create-board-form {
+  background: $secondary-color-light;
+  border: 2px solid $yes-btn-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: $border-radius;
+  border: 1px solid $secondary-color-light;
+  padding: $spacing-tiny 0px;
+  transition: background-color 0.3s;
+
+  &:hover {
+      border: 1px solid #000;
+      background-color: rgba(9, 66, 54, 0.3);
+  }
+}
+
+.create-board-form .inline-form {
+  display: flex;
+  gap: $spacing-tiny;
+}
+
+
+.create-board-form .inline-form-button {
+  background: $yes-btn-color;
+  padding: $spacing-tiny;
+}
+
+.create-board-form .inline-form-input {
+  font-weight: 500;
+  font-size: $spacing-medium;
+  background-color: $background-color-light;
+  border: 2px solid $secondary-color-light;
+  box-sizing: border-box;
+  border-radius: $border-radius;
+  height: 30px;
+  padding: $spacing-small;
+}

@@ -1,4 +1,4 @@
-@import '../../../../styles.scss';
+@import "../../../../assets/variables.scss";
 
 .boards-page-container {
     display: flex;
@@ -51,20 +51,6 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: $spacing-medium;
-}
-  
-.create-board-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: $btn-border-radius;
-    border: 1px solid $secondary-color-light;
-    padding: 5px 0px;
-    transition: background-color 0.3s;
-  
-    &:hover {
-        border: 1px solid #000;
-    }
 }
   
 .board-tile {
