@@ -85,6 +85,9 @@ io.use(async (socket: Socket, next) => {
   socket.on(SocketEventsEnum.boardsUpdate, (data) => {
     boardsController.updateBoard(io, socket, data);
   });
+  socket.on(SocketEventsEnum.boardsDelete, (data) => {
+    boardsController.deleteBoard(io, socket, data);
+  });
 });
 
 mongoose.connect("mongodb+srv://ttokayev7:F7NIZjfbukE8T90r@cluster0.n7ex4ub.mongodb.net/?retryWrites=true&w=majority").then(() => {

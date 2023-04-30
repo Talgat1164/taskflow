@@ -6,10 +6,10 @@
       class="edit-board-form"
       [defaultText]="data.board.title"
       [title]="data.board.title"
-      [hasButton]="true"
-      buttonText="Изменить"
+    
       (handleSubmit)="updateBoardName($event)"
     ></inline-form>
+    <div class="delete-board" (click)="deleteBoard()">×</div>
   </div>
   <div class="columns">
     <div class="column" *ngFor="let column of data.columns">
