@@ -102,6 +102,12 @@ export class BoardComponent implements OnInit {
         });
 
         this.socketService
+        .listen<ColumnInterface>(SocketEventsEnum.columnsUpdateSuccess)
+        .subscribe((updatedColumn) => {
+          this.boardService.updateColumn(updatedColumn);
+        });
+
+        this.socketService
         .listen<void>(SocketEventsEnum.boardsDeleteSuccess)
         .subscribe(() => {
           this.router.navigateByUrl('/boards');
@@ -143,6 +149,12 @@ export class BoardComponent implements OnInit {
 
   updateBoardName(boardName: string): void {
     this.boardsService.updateBoard(this.boardId, { title: boardName });
+  }
+
+  updateColumnName(columnName: string, columnId: string): void {
+    this.columnsService.updateColumn(this.boardId, columnId, {
+      title: columnName,
+    });
   }
 
   deleteBoard(): void {

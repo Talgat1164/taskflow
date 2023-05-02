@@ -16,5 +16,8 @@ export enum SocketEventsEnum {
     columnsDelete = 'columns:delete',
     columnsDeleteSuccess = 'columns:deleteSuccess',
     columnsDeleteFailure = 'columns:deleteFailure',
+    columnsUpdate = 'columns:update',
+    columnsUpdateSuccess = 'columns:updateSuccess',
+    columnsUpdateFailure = 'columns:updateFailure',
 }
   
