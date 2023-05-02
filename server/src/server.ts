@@ -88,6 +88,9 @@ io.use(async (socket: Socket, next) => {
   socket.on(SocketEventsEnum.boardsDelete, (data) => {
     boardsController.deleteBoard(io, socket, data);
   });
+  socket.on(SocketEventsEnum.columnsDelete, (data) => {
+    columnsController.deleteColumn(io, socket, data);
+  });
 });
 
 mongoose.connect("mongodb+srv://ttokayev7:F7NIZjfbukE8T90r@cluster0.n7ex4ub.mongodb.net/?retryWrites=true&w=majority").then(() => {
