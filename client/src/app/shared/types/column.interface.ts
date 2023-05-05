@@ -3,5 +3,4 @@ export interface ColumnInterface {
     title: string;
     createdAt: string;
     updatedAt: string;
-}
-  
+} 

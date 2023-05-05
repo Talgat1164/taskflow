@@ -94,6 +94,12 @@ io.use(async (socket: Socket, next) => {
   socket.on(SocketEventsEnum.columnsUpdate, (data) => {
     columnsController.updateColumn(io, socket, data);
   });
+  socket.on(SocketEventsEnum.tasksUpdate, (data) => {
+    tasksController.updateTask(io, socket, data);
+  });
+  socket.on(SocketEventsEnum.tasksDelete, (data) => {
+    tasksController.deleteTask(io, socket, data);
+  });
 });
 
 mongoose.connect("mongodb+srv://ttokayev7:F7NIZjfbukE8T90r@cluster0.n7ex4ub.mongodb.net/?retryWrites=true&w=majority").then(() => {
