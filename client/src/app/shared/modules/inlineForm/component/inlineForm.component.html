@@ -21,6 +21,8 @@
       *ngIf="inputType === 'textarea'"
       formControlName="title"
       class="inline-form-input"
+      (blur)="onSubmit()"
+    >
     ></textarea>
     <button
       *ngIf="hasButton"

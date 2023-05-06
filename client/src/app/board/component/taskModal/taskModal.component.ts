@@ -106,6 +106,7 @@ export class TaskModalComponent implements OnDestroy {
   }
 
   updateTaskDescription(taskDesctiption: string): void {
+    console.log('taskDesctiption:', taskDesctiption); // Добавьте эту строку
     this.tasksService.updateTask(this.boardId, this.taskId, {
       description: taskDesctiption,
     });
