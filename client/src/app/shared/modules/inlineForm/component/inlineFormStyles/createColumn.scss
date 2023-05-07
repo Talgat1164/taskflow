@@ -2,7 +2,7 @@
 
 .create-column-form {
   background: $secondary-color-light;
-  border: 2px solid $yes-btn-color;  
+  border: 2px solid $input-border-light; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,30 +13,41 @@
   min-width: $desktop-task-width;
 
   &:hover {
-      border: 1px solid $background-color-dark;
-      background-color: rgba(9, 66, 54, 0.3);
+    border: 1px solid $background-color-dark;
+    background-color: rgba(9, 66, 54, 0.3);
   }
 }
-
 
 .create-column-form .inline-form {
   display: flex;
   gap: $spacing-tiny;
+  justify-content: space-around;
 }
 
-
 .create-column-form .inline-form-button {
-  background: $yes-btn-color;
-  padding: $spacing-tiny;
+  background: $yes-btn-background-color;
+  color: $yes-btn-color;
+  border: $btn-outline-border-width solid $btn-outline-border-color;
+  border-radius: $border-radius;
+  font-size: $btn-font-size;
+  padding: $btn-padding-vertical $btn-padding-horizontal;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover {
+    background-color: $btn-outline-hover-background-color;
+    color: $btn-outline-hover-color;
+  }
 }
 
 .create-column-form .inline-form-input {
   font-weight: 500;
-  font-size: $spacing-medium;
+  font-size: $font-size-medium;
   background-color: $background-color-light;
-  border: 2px solid $secondary-color-light;
+  border: 2px solid $input-border-light;
   box-sizing: border-box;
   border-radius: $border-radius;
-  height: 30px;
+  height: $input-height-large;
   padding: $spacing-small;
+  width: 80%;
 }

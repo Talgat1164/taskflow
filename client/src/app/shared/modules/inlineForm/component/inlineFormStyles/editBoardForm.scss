@@ -1,24 +1,23 @@
 @import "../../../../../../assets/variables.scss";
 
 .edit-board-form .inline-form-text {
-  font-size: 18px;
-  color: #000;
-  padding: 5px 12px;
-  margin-right: 20px;
+  font-size: $font-size-mediumPlus;
+  color: $text-color-light;
+  padding: $spacing-small $spacing-medium;
+  margin-right: $spacing-large;
 }
 
 .edit-board-form .inline-form-input {
   font-weight: 300;
-  font-size: 14px;
+  font-size: $font-size-medium;
   width: 100%;
-  background-color: #fff;
-  border: 1px solid #000;
+  background-color: $input-background-color-light;
+  border: 1px solid $input-border-light;
   box-sizing: border-box;
-  border-radius: 3px;
-  height: 30px;
-  padding: 7px;
+  border-radius: $border-radius;
+  height: $input-height-large;
+  padding: $spacing-small;
 }
-
 
 .edit-board-form .inline-form {
   display: flex;

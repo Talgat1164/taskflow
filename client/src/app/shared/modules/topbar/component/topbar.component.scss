@@ -1,62 +1,62 @@
 @import "../../../../../assets/variables.scss";
 
 .navbar-boards {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 20px;
-    border-bottom: 1px solid $primary-color-light;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+  border-bottom: 1px solid $primary-color-light;
 }
 
 .logo {
-  font-size: $font-size-large;
-  font-weight: bold;
-  color: $primary-color-light;
-  text-shadow: 1px 1px $secondary-color-light;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  font-family: $font-primary;
+font-size: $font-size-large;
+font-weight: bold;
+color: $primary-color-light;
+text-shadow: 1px 1px $secondary-color-light;
+text-transform: uppercase;
+letter-spacing: 5px;
+font-family: $font-primary;
 }
 
 .btn {
-  background: $btn-bgcolor-light;
-  color: $btn-color-light;
-  box-shadow: $box-shadow-light;
-  border-radius: $border-radius;
-  padding: $btn-pad-v $btn-pad-h;
+background: $btn-background-color-light;
+color: $btn-color-light;
+box-shadow: $box-shadow-light;
+border-radius: $border-radius;
+padding: $btn-padding-vertical $btn-padding-horizontal;
 }
 
 .home-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: $spacing-medium $spacing-large;
-  background-color: $background-color-light;
-  box-shadow: $box-shadow-light;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: $spacing-medium $spacing-large;
+background-color: $background-color-light;
+box-shadow: $box-shadow-light;
 }
 
 .home-header-login,
 .home-header-register {
-  font-size: $font-size-medium;
-  text-decoration: none;
-  margin-left: $spacing-medium;
+font-size: $font-size-medium;
+text-decoration: none;
+margin-left: $spacing-medium;
 }
 
 .navbar-left-side {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 }
 
 .navbar-icon {
-    color: $primary-color-light;
-    scale: 1.3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-    border: 1px solid $primary-color-light;
-    height: fit-content;
+  color: $primary-color-light;
+  scale: 1.3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border: 1px solid $primary-color-light;
+  height: fit-content;
 }
 
 .navbar-icon:hover {
-    background-color: $secondary-color-light;
+  background-color: $secondary-color-light;
 }

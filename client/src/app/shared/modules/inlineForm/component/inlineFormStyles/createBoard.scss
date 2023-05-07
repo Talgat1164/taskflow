@@ -1,6 +1,5 @@
 @import "../../../../../../assets/variables.scss";
 
-
 .create-board-form {
   background: $secondary-color-light;
   border: 2px solid $yes-btn-color;
@@ -13,29 +12,41 @@
   transition: background-color 0.3s;
 
   &:hover {
-      border: 1px solid #000;
-      background-color: rgba(9, 66, 54, 0.3);
+    border: 1px solid #000;
+    background-color: rgba(9, 66, 54, 0.3);
   }
 }
 
 .create-board-form .inline-form {
   display: flex;
   gap: $spacing-tiny;
+  justify-content: space-around;
 }
 
-
 .create-board-form .inline-form-button {
-  background: $yes-btn-color;
-  padding: $spacing-tiny;
+  background: $yes-btn-background-color;
+  color: $yes-btn-color;
+  border: $btn-outline-border-width solid $btn-outline-border-color;
+  border-radius: $border-radius;
+  font-size: $btn-font-size;
+  padding: $btn-padding-vertical $btn-padding-horizontal;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover {
+    background-color: $btn-outline-hover-background-color;
+    color: $btn-outline-hover-color;
+  }
 }
 
 .create-board-form .inline-form-input {
   font-weight: 500;
-  font-size: $spacing-medium;
+  font-size: $font-size-medium;
   background-color: $background-color-light;
-  border: 2px solid $secondary-color-light;
+  border: 2px solid $input-border-light;
   box-sizing: border-box;
   border-radius: $border-radius;
-  height: 30px;
+  height: $input-height-large;
   padding: $spacing-small;
+  width: 75%;
 }

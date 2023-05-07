@@ -11,11 +11,11 @@
 }
 
 .btn {
-  background: $btn-bgcolor-light;
+  background: $btn-background-color-light;
   color: $btn-color-light;
   box-shadow: $box-shadow-light;
-  border-radius: $border-radius;
-  padding: $btn-pad-v $btn-pad-h;
+  border-radius: $btn-border-radius;
+  padding: $btn-padding-vertical $btn-padding-horizontal;
 }
 
 .home-header {
@@ -114,7 +114,7 @@
   margin-bottom: $spacing-small;
 }
 
-// Медиа-запросы
+// Media queries
 @media only screen and (max-width: $tablet-width) {
   .home-container {
     padding: $spacing-huge $spacing-medium;
@@ -142,41 +142,85 @@
 
   .workflow-left-part {
     max-width: none;
-    margin-bottom: $spacing-large;
+    margin-bottom: $spacing-medium;
+  }
+}
+
+@media only screen and (max-width: $mobile-width) {
+  .home-container {
+    padding: $spacing-large $spacing-small;
+  }
+}
+
+
+
+@media only screen and (max-width: $mobile-width) {
+  .home-container {
+    padding: $spacing-large $spacing-small;
+  }
+}
+
+// Adjustments for smaller screens
+@media only screen and (max-width: $mobile-width) {
+  .home-header {
+    flex-direction: column;
   }
 
-  .home-container.workflow-container {
-    flex-direction: column-reverse;
+  .home-header-login,
+  .home-header-register {
+    margin-left: 0;
+    margin-top: $spacing-small;
   }
 
-  @media only screen and (max-width: $mobile-width) {
-    .home-container {
-      padding: $spacing-large $spacing-small;
-    }
-
-    .home-title {
-      font-size: $font-size-small;
-    }
-
-    .home-description {
-      font-size: $font-size-small;
-      margin-bottom: $spacing-medium;
-    }
-
-    .home-header-home-link {
-      font-size: $font-size-medium;
-    }
-
-    .home-header-login,
-    .home-header-register {
-      font-size: $font-size-small;
-      margin-left: $spacing-small;
-    }
-
-    .home-container.team-container .team-image,
-    .home-container.information-container img,
-    .home-container.workflow-container .workflow-image {
-      margin-top: $spacing-medium;
-    }
+  .home-title {
+    font-size: $font-size-mediumPlus;
   }
+
+  .home-description {
+    font-size: $font-size-small;
+  }
+
+  .workflow-left-part {
+    max-width: none;
+    margin-bottom: $spacing-medium;
+  }
+
+  .home-container.team-container .team-image,
+  .home-container.information-container img,
+  .home-container.workflow-container .workflow-image {
+    margin-top: $spacing-medium;
+  }
+}
+
+// Additional button styles
+.btn-outline {
+  background: transparent;
+  border: $btn-outline-border-width solid $btn-outline-border-color;
+  color: $btn-outline-color;
+}
+
+.btn-outline:hover {
+  background-color: $btn-outline-hover-background-color;
+  color: $btn-outline-hover-color;
+}
+
+// Yes/No button styles
+.yes-btn {
+  background-color: $yes-btn-background-color;
+  color: $yes-btn-color;
+}
+
+.yes-btn:hover {
+  background-color: $yes-btn-hover-background-color;
+  color: $yes-btn-hover-color;
+}
+
+.no-btn {
+  background-color: $no-btn-background-color;
+  color: $no-btn-color;
+}
+
+.no-btn:hover {
+  background-color: $no-btn-hover-background-color;
+  color: $no-btn-hover-color;
 }

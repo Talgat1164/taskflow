@@ -1,3 +1,5 @@
+@import "../../../../../../assets/variables.scss";
+
 .task-modal {
   position: absolute;
   width: 100%;
@@ -13,118 +15,107 @@
   left: 0;
   top: 0;
   z-index: 1;
-  background: rgba(0, 0, 0, 0.5);
+  background: $background-smooth-light;
 }
 .task-modal-container {
-    display: flex;
-    flex-direction: column;
-  background: #f4f5f7;
+  display: flex;
+  flex-direction: column;
+  background: $background-color-light;
   z-index: 2;
   margin-left: auto;
   margin-right: auto;
   left: 0;
   right: 0;
-  margin-top: 128px;
+  top: 150px;
+  margin-top: $spacing-large;
   position: absolute;
-  width: 768px;
-  min-height: 230px;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 10%);
-  padding: 20px;
+  width: $modal-width;
+  min-height: $modal-min-height;
+  border-radius: $border-radius;
+  box-shadow:$box-shadow-light;
+  padding: $spacing-large;
 }
-
 .task-modal-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-bottom: $spacing-small;
 }
-
-
 .task-modal-close {
-  width: 30px;
-  font-size: 24px;
-  color: black;
+  display: flex;
+  justify-content: center;
+  width: $spacing-large;
+  font-size: $font-size-large;
+  color: $text-color-light;
   cursor: pointer;
-  padding: 5px;
-  text-align: center;
-  border: 1px solid #ccc;
+  padding: $spacing-tiny $spacing-medium;
+  border: 1px solid $border-light;
+  color: $no-btn-color;
+  background-color: $no-btn-background-color;
+  border-radius: $border-radius;
 }
-
 .task-modal-close:hover {
-  background-color: rgba(9, 30, 66, 0.08);
-  border-radius: 15%;
+  background-color: $no-btn-hover-background-color;
 }
-
 .task-modal-edit-title-form {
   cursor: pointer;
 }
-
 .task-modal-edit-title-form .inline-form-text {
-  font-size: 24px;
-  font-weight: 600;
+  font-size: $font-size-large;
+  font-weight: 700;
 }
-
 .task-modal-edit-title-form .inline-form-input {
   font-weight: 500;
-  font-size: 26px;
-  width: 100%;
-  background-color: #fafbfc;
-  border: 2px solid #dfe1e6;
+  font-size: $font-size-large;
+  background-color: $input-background-color-light;
+  border: 1px solid $input-border-light;
   box-sizing: border-box;
-  border-radius: 3px;
-  height: 30px;
-  padding: 7px;
+  border-radius: $border-radius;
+  height: $input-height-small;
+  padding: $spacing-small;
 }
-
 .task-modal-edit-description-form {
   cursor: pointer;
 }
-
 .task-modal-edit-description-form .inline-form-input {
   font-weight: 500;
-  font-size: 16px;
+  font-size: $font-size-medium;
   width: 100%;
-  background-color: #fafbfc;
-  border: 2px solid #dfe1e6;
+  background-color: $input-background-color-light;
+  border: 1px solid $border-light;  
   box-sizing: border-box;
-  border-radius: 3px;
-  padding: 7px;
-  height: 150px;
+  border-radius: $border-radius;
+  padding: $spacing-small;
+  height: $textarea-height;
 }
-
 .task-modal-edit-description-form .inline-form-button {
-  background: #5aac44;
-  border-radius: 0.3em;
-  color: #fff;
+  background: $yes-btn-background-color;
+  border-radius: $border-radius;
+  color: $yes-btn-color;
   display: inline-block;
-  font-weight: bold;
-  margin-bottom: 0.8em;
-  font-size: 16px;
-  padding: 0.6em 1.3em !important;
+  font-weight: 700;
+  margin-bottom: $spacing-medium;
+  font-size: $font-size-medium;
+  padding: $btn-padding-vertical $btn-padding-horizontal;
   position: relative;
   text-decoration: none;
   border: 0px;
-  margin-top: 10px;
+  margin-top: $spacing-small;
   cursor: pointer;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: $font-primary;
 }
-
 .task-modal-edit-description-form .inline-form-button:hover {
-  background-color: #61bd4f;
+  background-color: $yes-btn-hover-background-color;
 }
-
 .task-modal-description {
   flex: 1;
-  margin-right: 20px;
+  margin-right: $spacing-large;
 }
-
 .task-modal-description-label {
-  margin-bottom: 20px;
-  font-size: 20px;
-  font-weight: 600;
+  margin-bottom: $spacing-large;
+  font-size: $font-size-mediumPlus;
+  font-weight: 700;
 }
-
 .task-modal-body {
   display: flex;
   align-items: flex-start;
@@ -132,58 +123,58 @@
 }
 
 .task-modal-actions-label {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 20px;
+  font-size: $font-size-mediumPlus;
+  font-weight: 700;
+  margin-bottom: $spacing-large;
 }
 
 .task-modal-actions-icon {
-  width: 10px;
-  margin-right: 6px;
+  width: $icon-size-small;
+  margin-right: $spacing-tiny;
 }
 
 .task-modal-actions-action {
-  font-size: 16px;
+  font-size: $font-size-medium;
   display: flex;
   align-items: center;
-  border-radius: 3px;
-  background-color: rgba(9, 30, 66, 0.04);
+  border-radius: $border-radius;
+  background-color: $no-btn-background-color;
   cursor: pointer;
-  color: #172b4d;
-  margin-top: 8px;
-  min-width: 130px;
-  padding: 6px 12px;
+  color: $no-btn-color;
+  margin-top: $spacing-small;
+  min-width: $action-width;
+  padding: $spacing-small $spacing-medium;
+  border: 1px solid $border-light;
 }
 
 .task-modal-actions-action:hover {
-  background-color: rgba(9, 30, 66, 0.08);
+  background-color: $no-btn-hover-background-color;
 }
 
 .column-select-label {
-    font-size: 20px;
-    font-weight: 600;
+  font-size: $font-size-mediumPlus;
+  font-weight: 700;
 }
-// COLUMN SELECT 
 
+// COLUMN SELECT
 .column-select {
-    width: 100%;
-    max-width: 200px;
-    height: 50px;
-    padding: 10px;
-    font-size: 20px;
-  }
-  
-  .column-select:hover,
-  .column-select:focus {
-    background-color: rgba(9, 30, 66, 0.15);
-    border: 6px solid rgba(9, 30, 66, 0);
-    border-bottom: 2px solid rgba(9, 30, 66, 0.25);
-  }
-  
-  .column-select-container {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    margin-top: 20px;
-  }
-  
+  width: 100%;
+  max-width: $column-select-max-width;
+  height: $input-height-large;
+  padding: $spacing-medium;
+  font-size: $font-size-large;;
+}
+
+.column-select:hover,
+.column-select:focus {
+  background-color: rgba(9, 30, 66, 0.15);
+  border: 6px solid rgba(9, 30, 66, 0);
+  border-bottom: 2px solid rgba(9, 30, 66, 0.25);
+}
+
+.column-select-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: $spacing-large;
+  margin-top: $spacing-large;
+}

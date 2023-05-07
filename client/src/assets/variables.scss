@@ -1,25 +1,41 @@
+// Общие цвета
+$background-color-blue: #00add0;
+
+// Светлая тема
 // Цвета
 $primary-color-light: #4285f4;
 $secondary-color-light: #ebecf0;
 $text-color-light: #202124;
 $background-color-light: #fff;
-$background-color-blue: #00add0; 
-
 $box-shadow-light: 0 0 10px rgba(0, 0, 0, 0.3);
+$btn-background-color-light: $primary-color-light;
+$btn-color-light: #fff;
+$btn-hover-background-color-light: darken($primary-color-light, 10%);
+$btn-hover-color-light: #fff;
+$border-light: #313131;
+$input-background-color-light: #f5f5f5;
+$input-border-light: #aaa;
+$background-smooth-light: rgba(0, 0, 0, 0.5);
 
+
+// Темная тема
+// Цвета
 $primary-color-dark: #4285f4;
 $secondary-color-dark: #ccc;
 $text-color-dark: #f5f5f5;
 $background-color-dark: #202124;
-
-
-
-$yes-btn-color: #00CF00; 
-$no-btn-color: #FC0221; 
+$btn-background-color-dark: $primary-color-dark;
+$btn-color-dark: #fff;
+$btn-hover-background-color-dark: lighten($primary-color-dark, 10%);
+$btn-hover-color-dark: #fff;
+$border-dark: #d1d1d1;
+$input-background-color-dark: #37474f;
+$input-border-dark: #757575;
+$background-smooth-dark: rgba(0, 0, 0, 0.9);
 
 // Шрифты
-$font-primary: 'Roboto', sans-serif;
-$font-secondary: 'Open Sans', sans-serif;
+$font-primary: "Roboto", sans-serif;
+$font-secondary: "Open Sans", sans-serif;
 
 // Размеры
 $spacing-tiny: 4px;
@@ -32,16 +48,45 @@ $font-size-small: 12px;
 $font-size-medium: 16px;
 $font-size-mediumPlus: 20px;
 $font-size-large: 24px;
-$desktop-task-width: 272px; 
+$desktop-task-width: 272px;
+$modal-width: 572px;
+$modal-min-height: 300px;
+$input-height-small: 24px;
+$input-height-large: 40px;
+$input-border-radius: 4px;
+
+$textarea-height: 100px;
+$icon-size-small: 16px;
+$action-width: 100px;
+$column-select-max-width: 200px;
+
 // Адаптивность
 $mobile-width: 400px;
 $tablet-width: 768px;
 $desktop-width: 1024px;
-
 $column-desktop-width: 272px;
 $column-desktop-max-height: 600px;
-// btns
-$btn-pad-v: 10px; 
-$btn-pad-h: 15px;
-$btn-bgcolor-light: #4285f4;
-$btn-color-light: #fff;
+
+// Кнопки
+$btn-padding-vertical: 10px;
+$btn-padding-horizontal: 15px;
+$btn-border-radius: 4px;
+$btn-font-size: 16px;
+
+// Yes/No кнопки
+$yes-btn-background-color: #4caf50;
+$yes-btn-color: #fff;
+$yes-btn-hover-background-color: darken($yes-btn-background-color, 10%);
+$yes-btn-hover-color: #fff;
+
+$no-btn-background-color: #f44336;
+$no-btn-color: #fff;
+$no-btn-hover-background-color: darken($no-btn-background-color, 10%);
+$no-btn-hover-color: #fff;
+
+// Дополнительные стили для кнопок могут быть добавлены здесь, например:
+$btn-outline-border-width: 1px;
+$btn-outline-border-color: $primary-color-light;
+$btn-outline-color: $primary-color-light;
+$btn-outline-hover-background-color: $primary-color-light;
+$btn-outline-hover-color: #fff;
