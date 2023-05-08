@@ -6,6 +6,7 @@ import { InlineFormModule } from '../shared/modules/inlineForm/inlineForm.module
 import {TopbarModule} from '../shared/modules/topbar/topbar.module';
 import { BoardsService } from '../shared/services/boards.service';
 import { BoardsComponent } from './components/boards/boards.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -21,7 +22,8 @@ const routes: Routes = [
     CommonModule, 
     RouterModule.forChild(routes), 
     InlineFormModule, 
-    TopbarModule
+    TopbarModule,
+    FormsModule
   ],
   providers: [BoardsService],
 })

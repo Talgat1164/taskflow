@@ -19,6 +19,22 @@
     <div class="my-boards">
       <div class="my-boards-section-header">
         <div class="boards-page-header-name">My boards</div>
+        <div class="board-sf">
+          <input
+            class="board-filter-input"
+            [(ngModel)]="filter"
+            placeholder="Filter boards"
+            (input)="filterBoards()"
+          />
+          <select
+            class="board-sort-select"
+            [(ngModel)]="sortOption"
+            (change)="sortBoards()"
+          >
+            <option value="date">Sort by date</option>
+            <option value="alphabet">Sort alphabetically</option>
+          </select>
+        </div>
       </div>
       <div class="board-tile-list">
         <inline-form
@@ -30,7 +46,7 @@
         ></inline-form>
         <a
           [routerLink]="['/boards', board.id]"
-          *ngFor="let board of boards"
+          *ngFor="let board of filteredBoards"
           class="board-tile"
         >
           <div class="board-tile-details-name">{{ board.title }}</div>

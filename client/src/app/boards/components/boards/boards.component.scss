@@ -79,3 +79,27 @@
     font-size: var(--font-size-medium);
     font-family: var(--font-secondary);
 }
+
+.board-sf {
+    display: flex;
+    align-items: center;
+    gap: $spacing-small;
+
+}
+
+.board-filter-input {
+    height: 40px;
+    font-size: $font-size-medium;
+    color: var(--text-color);
+    text-align: center;
+    background-color: var(--background-color);
+    border: 1px solid;
+}
+
+.board-sort-select {
+    height: 40px;
+    font-size: $font-size-medium;
+    color: var(--text-color);
+    text-align: center;
+    background-color: var(--background-color);
+}
