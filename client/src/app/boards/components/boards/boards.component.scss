@@ -1,16 +1,21 @@
 @import "../../../../assets/variables.scss";
 
+:host {
+    background-color: var(--background-color);
+}
+
 .boards-page-container {
+    min-height: 100vh;
     display: flex;
-    background-color: $background-color-light;
-    color: $text-color-light;
-    font-family: $font-primary;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-primary);
 }
   
 .home-left-sidebar-container {
     width: 20%;
     padding: $spacing-large;
-    background-color: $secondary-color-light;
+    background-color: var(--secondary-color);
     display: flex;
     flex-direction: column;
     gap: $spacing-medium;
@@ -18,15 +23,15 @@
   
 .boards-side-menu-option {
     text-decoration: none;
-    color: $text-color-light;
+    color: var(--btn-color);
     padding: $spacing-tiny $spacing-small;
-    border-radius: $border-radius;
+    border-radius: var(--border-radius);
     transition: background-color 0.3s;
-  
+    background-color: var(--btn-background-color);
+    border: 1px solid var(--border-color);
     &:hover,
     &.boards-side-menu-option-selected {
-      background-color: $primary-color-light;
-      color: $btn-color-light;
+      color: var(--btn-color);
     }
 }
   
@@ -44,7 +49,7 @@
   
 .boards-page-header-name {
     font-size: $font-size-large;
-    font-family: $font-secondary;
+    font-family: var(--font-secondary);
 }
 
 .board-tile-list {
@@ -57,20 +62,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: $secondary-color-light;
-    color: $text-color-light;
-    border-radius: $border-radius;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border-radius: var(--border-radius);
     padding: $spacing-medium;
     text-decoration: none;
     transition: background-color 0.3s;
   
     &:hover {
-      background-color: $primary-color-light;
-      color: $btn-color-light;
+      background-color: var(--primary-color);
+      color: var(--btn-color);
     }
 }
   
 .board-tile-details-name {
-    font-size: $font-size-medium;
-    font-family: $font-secondary;
+    font-size: var(--font-size-medium);
+    font-family: var(--font-secondary);
 }

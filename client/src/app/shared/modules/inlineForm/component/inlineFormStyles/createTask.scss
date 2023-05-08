@@ -1,53 +1,56 @@
 @import "../../../../../../assets/variables.scss";
 
 .create-task-form {
-  background: $secondary-color-light;
-  border: 2px solid $input-border-light; 
+  background: var(--secondary-color);
+  border: 2px solid var(--input-border);
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: $border-radius;
-  padding: $spacing-small;
+  padding: var(--spacing-small);
   transition: background-color 0.3s;
+  border-radius: $border-radius;
 
   &:hover {
-    border: 1px solid $border-light;
+    border: 1px solid var(--border);
     background-color: rgba(9, 66, 54, 0.3);
   }
 }
 
 .create-task-form .inline-form {
   display: flex;
-  gap: $spacing-tiny;
+  gap: var(--spacing-tiny);
   justify-content: space-around;
+  width: 100%;
 }
 
 .create-task-form .inline-form-button {
-  background: $yes-btn-background-color;
-  color: $yes-btn-color;
-  border: $btn-outline-border-width solid $btn-outline-border-color;
-  border-radius: $border-radius;
-  font-size: $btn-font-size;
-  padding: $btn-padding-vertical $btn-padding-horizontal;
+  background: var(--primary-color);
+  color: var(--yes-btn-color);
+  border: 1px solid var(--btn-outline-border-color);
+  border-radius: var(--border-radius);
+  font-size: var(--btn-font-size);
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  width: $input-height-large;
+  padding: 5px 10px;
+  height: var(--input-height-large);
+  border-radius: $border-radius;
 
   &:hover {
-    background-color: $btn-outline-hover-background-color;
-    color: $btn-outline-hover-color;
+    color: var(--btn-outline-hover-color);
   }
 }
 
 .create-task-form .inline-form-input {
   font-weight: 500;
-  font-size: $font-size-medium;
-  background-color: $background-color-light;
-  border: 2px solid $input-border-light; 
+  font-size: var(--font-size-medium);
+  background-color: var(--background-color);
+  border: 2px solid var(--input-border);
   box-sizing: border-box;
-  border-radius: $border-radius;
-  height: $input-height-large;
+  border-radius: var(--border-radius);
+  height: var(--input-height-large);
   width: 80%;
-  padding: $spacing-small;
+  height: 30px;
+  padding: var(--spacing-small);
+  text-align: center;
 }

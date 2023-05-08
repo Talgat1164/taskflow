@@ -1,7 +1,7 @@
 @import "../../../assets/variables.scss";
 
 .board {
-  background: $background-color-light;
+  background: var(--background-color);
   height: 100vh;
   overflow-x: auto;
 }
@@ -12,7 +12,7 @@
   align-items: center;
   justify-content: center;
   font-size: $font-size-large;
-  color: $text-color-light;
+  color: var(--text-color);
 }
 
 .columns {
@@ -20,7 +20,7 @@
 }
 
 .column {
-  background: $secondary-color-light;
+  background: var(--secondary-color);
   padding: 8px;
   border-radius: 4px;
   width: $desktop-task-width;
@@ -46,7 +46,7 @@
   max-width: 300px;
   min-height: 20px;
   color: #3d4852;
-  background-color: $background-color-light;
+  background-color: var(--background-color);
   display: flex;
   align-items: center;
   padding: 8px;
@@ -55,8 +55,8 @@
 }
 
 .task:hover {
-  background-color: $primary-color-light;
-  color: $btn-color-light;
+  background-color: var(--primary-color);
+  color: var(--btn-color);
 }
 
 .edit-board-form {
@@ -66,7 +66,18 @@
 
 .delete-board {
   font-size: 24px;
-  background-color: red;
+  background-color: var(--no-btn-background-color);
   padding: 0px 4px;
+  color: var(--no-btn-color);
+}
+
+.create-task-form {
+  padding: 10px 0px;
+  background: var(--secondary-color);
+  border: 1px solid var(--text-color);
+  &:hover {
+    border: 1px solid var(--border-color);
+    background-color: rgba(9, 66, 54, 0.3);
+  }
 }
 

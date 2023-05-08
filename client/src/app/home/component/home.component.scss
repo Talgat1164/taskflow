@@ -1,20 +1,20 @@
 @import "../../../assets/variables.scss";
 
 .logo {
-  font-size: $font-size-large;
+  font-size:$font-size-large;
   font-weight: bold;
-  color: $primary-color-light;
-  text-shadow: 1px 1px $secondary-color-light;
+  color: var(--primary-color);
+  text-shadow: 1px 1px var(--secondary-color);
   text-transform: uppercase;
   letter-spacing: 5px;
-  font-family: $font-primary;
+  font-family: var(--font-primary);
 }
 
 .btn {
-  background: $btn-background-color-light;
-  color: $btn-color-light;
-  box-shadow: $box-shadow-light;
-  border-radius: $btn-border-radius;
+  background: var(--btn-background-color);
+  color: var(--btn-color);
+  box-shadow: var(--box-shadow);
+  border-radius: $border-radius;
   padding: $btn-padding-vertical $btn-padding-horizontal;
 }
 
@@ -23,8 +23,8 @@
   justify-content: space-between;
   align-items: center;
   padding: $spacing-medium $spacing-large;
-  background-color: $background-color-light;
-  box-shadow: $box-shadow-light;
+  background-color: var(--background-color);
+  box-shadow: var(--box-shadow);
 }
 
 .home-header-login,
@@ -35,42 +35,42 @@
 }
 
 .home-hero {
-  background-color: $primary-color-light;
+  background-color: var(--primary-color);
   color: #fff;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 .home-container {
-  max-width: $desktop-width;
+  max-width: var(--desktop-width);
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: $spacing-huge $spacing-large;
 }
 
 .home-hero .home-container {
-  color: $background-color-light;
+  color: var(--background-color);
 }
 
 .home-title {
-  font-size: $font-size-large;
+  font-size:$font-size-large;
   font-weight: bold;
   margin-bottom: $spacing-medium;
 }
 
 .home-description {
   font-size: $font-size-medium;
-  color: $text-color-light;
+  color: var(--text-color);
   margin-bottom: $spacing-large;
 }
 
 .home-team,
 .home-information,
 .home-workflow {
-  background-color: $background-color-light;
-  color: $text-color-light;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 .home-container.team-container,
@@ -83,7 +83,7 @@
 .home-container.team-container .home-title,
 .home-container.information-container .home-title,
 .home-container.workflow-container .home-title {
-  color: $primary-color-light;
+  color: var(--primary-color);
 }
 
 .home-container.team-container .home-description,
@@ -115,7 +115,7 @@
 }
 
 // Media queries
-@media only screen and (max-width: $tablet-width) {
+@media only screen and (max-width: var(--tablet-width)) {
   .home-container {
     padding: $spacing-huge $spacing-medium;
   }
@@ -125,7 +125,7 @@
   }
 
   .home-description {
-    font-size: $font-size-small;
+    font-size: var($font-size-small);
   }
 
   .home-container.team-container,
@@ -151,8 +151,6 @@
     padding: $spacing-large $spacing-small;
   }
 }
-
-
 
 @media only screen and (max-width: $mobile-width) {
   .home-container {
@@ -192,35 +190,11 @@
   }
 }
 
-// Additional button styles
-.btn-outline {
-  background: transparent;
-  border: $btn-outline-border-width solid $btn-outline-border-color;
-  color: $btn-outline-color;
+img {
+  max-width: 100%;
+  height: auto;
 }
 
-.btn-outline:hover {
-  background-color: $btn-outline-hover-background-color;
-  color: $btn-outline-hover-color;
-}
-
-// Yes/No button styles
-.yes-btn {
-  background-color: $yes-btn-background-color;
-  color: $yes-btn-color;
-}
-
-.yes-btn:hover {
-  background-color: $yes-btn-hover-background-color;
-  color: $yes-btn-hover-color;
-}
-
-.no-btn {
-  background-color: $no-btn-background-color;
-  color: $no-btn-color;
-}
-
-.no-btn:hover {
-  background-color: $no-btn-hover-background-color;
-  color: $no-btn-hover-color;
+.img {
+  width: 300px;
 }

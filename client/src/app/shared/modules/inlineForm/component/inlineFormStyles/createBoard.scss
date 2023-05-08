@@ -1,14 +1,14 @@
 @import "../../../../../../assets/variables.scss";
 
 .create-board-form {
-  background: $secondary-color-light;
-  border: 2px solid $yes-btn-color;
+  background: var(--secondary-color);
+  border: 2px solid var(--yes-btn-color);
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: $border-radius;
-  border: 1px solid $secondary-color-light;
-  padding: $spacing-tiny 0px;
+  border: 1px solid var(--secondary-color);
+  padding: var(--spacing-tiny) 0px;
   transition: background-color 0.3s;
 
   &:hover {
@@ -24,8 +24,8 @@
 }
 
 .create-board-form .inline-form-button {
-  background: $yes-btn-background-color;
-  color: $yes-btn-color;
+  background: var(--yes-btn-background-color);
+  color: var(--yes-btn-color);
   border: $btn-outline-border-width solid $btn-outline-border-color;
   border-radius: $border-radius;
   font-size: $btn-font-size;
@@ -34,16 +34,16 @@
   text-decoration: none;
   cursor: pointer;
   &:hover {
-    background-color: $btn-outline-hover-background-color;
-    color: $btn-outline-hover-color;
+    background-color: var(--btn-outline-hover-background-color);
+    color: var(--btn-outline-hover-color);
   }
 }
 
 .create-board-form .inline-form-input {
   font-weight: 500;
   font-size: $font-size-medium;
-  background-color: $background-color-light;
-  border: 2px solid $input-border-light;
+  background-color: var(--background-color);
+  border: 2px solid var(--input-border-color);
   box-sizing: border-box;
   border-radius: $border-radius;
   height: $input-height-large;

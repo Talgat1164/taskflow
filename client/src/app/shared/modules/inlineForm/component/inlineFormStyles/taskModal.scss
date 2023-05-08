@@ -15,12 +15,12 @@
   left: 0;
   top: 0;
   z-index: 1;
-  background: $background-smooth-light;
+  background: var(--background-smooth);
 }
 .task-modal-container {
   display: flex;
   flex-direction: column;
-  background: $background-color-light;
+  background: var(--background-color);
   z-index: 2;
   margin-left: auto;
   margin-right: auto;
@@ -32,7 +32,6 @@
   width: $modal-width;
   min-height: $modal-min-height;
   border-radius: $border-radius;
-  box-shadow:$box-shadow-light;
   padding: $spacing-large;
 }
 .task-modal-header {
@@ -46,10 +45,10 @@
   justify-content: center;
   width: $spacing-large;
   font-size: $font-size-large;
-  color: $text-color-light;
+  color: var(--text-color);
   cursor: pointer;
   padding: $spacing-tiny $spacing-medium;
-  border: 1px solid $border-light;
+  border: 1px solid var(--border-color);
   color: $no-btn-color;
   background-color: $no-btn-background-color;
   border-radius: $border-radius;
@@ -58,6 +57,7 @@
   background-color: $no-btn-hover-background-color;
 }
 .task-modal-edit-title-form {
+  color: var(--text-color);
   cursor: pointer;
 }
 .task-modal-edit-title-form .inline-form-text {
@@ -67,12 +67,14 @@
 .task-modal-edit-title-form .inline-form-input {
   font-weight: 500;
   font-size: $font-size-large;
-  background-color: $input-background-color-light;
-  border: 1px solid $input-border-light;
+  background-color: var(--input-background-color);
+  border: 1px solid var(--input-border-color);
   box-sizing: border-box;
   border-radius: $border-radius;
   height: $input-height-small;
   padding: $spacing-small;
+  border: 1px solid var(--border-color);  
+
 }
 .task-modal-edit-description-form {
   cursor: pointer;
@@ -81,12 +83,13 @@
   font-weight: 500;
   font-size: $font-size-medium;
   width: 100%;
-  background-color: $input-background-color-light;
-  border: 1px solid $border-light;  
+  background-color: var(--input-background-color);
+  border: 1px solid var(--border-color);  
   box-sizing: border-box;
   border-radius: $border-radius;
   padding: $spacing-small;
   height: $textarea-height;
+  color: var(--text-color);
 }
 .task-modal-edit-description-form .inline-form-button {
   background: $yes-btn-background-color;
@@ -106,15 +109,20 @@
 }
 .task-modal-edit-description-form .inline-form-button:hover {
   background-color: $yes-btn-hover-background-color;
+  color: var(--text-color);
 }
 .task-modal-description {
   flex: 1;
   margin-right: $spacing-large;
+  color: var(--text-color);
+
 }
 .task-modal-description-label {
   margin-bottom: $spacing-large;
   font-size: $font-size-mediumPlus;
   font-weight: 700;
+  color: var(--text-color);
+
 }
 .task-modal-body {
   display: flex;
@@ -126,6 +134,7 @@
   font-size: $font-size-mediumPlus;
   font-weight: 700;
   margin-bottom: $spacing-large;
+  color: var(--text-color);
 }
 
 .task-modal-actions-icon {
@@ -144,7 +153,7 @@
   margin-top: $spacing-small;
   min-width: $action-width;
   padding: $spacing-small $spacing-medium;
-  border: 1px solid $border-light;
+  border: 1px solid var(--border-color);
 }
 
 .task-modal-actions-action:hover {
@@ -154,6 +163,7 @@
 .column-select-label {
   font-size: $font-size-mediumPlus;
   font-weight: 700;
+  color: var(--text-color);
 }
 
 // COLUMN SELECT

@@ -12,11 +12,11 @@
 .logo {
   font-size: 48px;
   font-weight: bold;
-  color: $primary-color-light;
-  text-shadow: 2px 2px $secondary-color-light;
+  color: var(--primary-color);
+  text-shadow: 2px 2px var(--secondary-color);
   text-transform: uppercase;
   letter-spacing: 5px;
-  font-family: $font-primary;
+  font-family: var(--font-primary);
 }
 
 .form-container {
@@ -24,9 +24,9 @@
   flex-direction: column;
   align-items: center;
   padding: $spacing-medium;
-  background-color: $background-color-light;
+  background-color: var(--background-color);
   border-radius: 10px;
-  box-shadow: $box-shadow-light;
+  box-shadow: var(--box-shadow);
   max-width: 400px;
   width: 90%;
 }
@@ -35,13 +35,13 @@
   font-size: 24px;
   font-weight: bold;
   margin-bottom: $spacing-medium;
-  color: $primary-color-light;
+  color: var(--primary-color);
 }
 
 .login-input {
   padding: $spacing-small;
   margin-bottom: $spacing-small;
-  border: 1px solid $secondary-color-light;
+  border: 1px solid var(--secondary-color);
   border-radius: 5px;
   width: 100%;
   font-size: $font-size-medium;
@@ -52,8 +52,8 @@
   margin-top: $spacing-medium;
   border: none;
   border-radius: 5px;
-  background-color: $primary-color-light;
-  color: $background-color-light;
+  background-color: var(--primary-color);
+  color: var(--background-color);
   font-size: $font-size-medium;
   cursor: pointer;
 }
@@ -64,17 +64,17 @@
 }
 
 .register-link {
-  color: $primary-color-light;
+  color: var(--primary-color);
 }
 
 /* Адаптивные стили для формы входа */
-@media only screen and (max-width: $tablet-width) {
+@media only screen and (max-width: var(--tablet-width)) {
   .form-container {
     max-width: 300px;
   }
 
   .logo {
-    font-size: $font-size-large;
+    font-size:$font-size-large;
   }
 
   .login-input {
@@ -86,7 +86,7 @@
   }
 
   .bottom-form-links {
-    font-size: $font-size-small;
+    font-size: var(--font-size-small);
   }
 }
 
@@ -96,18 +96,18 @@
   }
 
   .login-header {
-    font-size: $font-size-large;
+    font-size:$font-size-large;
   }
 
   .login-input {
-    font-size: $font-size-small;
+    font-size: var(--font-size-small);
   }
 
   .login-submit-button {
-    font-size: $font-size-small;
+    font-size: var(--font-size-small);
   }
 
   .bottom-form-links {
-    font-size: $font-size-small;
+    font-size: var(--font-size-small);
   }
 }

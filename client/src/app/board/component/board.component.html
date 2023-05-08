@@ -18,8 +18,9 @@
           [defaultText]="column.title"
           [title]="column.title"
           (handleSubmit)="updateColumnName($event, column.id)"
-        ></inline-form> 
-        <div class="delete-board" (click)="deleteColumn(column.id)">×</div></div>
+        ></inline-form>
+        <div class="delete-board" (click)="deleteColumn(column.id)">×</div>
+      </div>
       <div
         *ngFor="let task of getTasksByColumn(column.id, data.tasks)"
         class="task"
