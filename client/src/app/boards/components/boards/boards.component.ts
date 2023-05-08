@@ -13,15 +13,24 @@ export class BoardsComponent implements OnInit {
   filteredBoards: BoardInterface[] = [];
   filter: string = '';
   sortOption: string = 'date';
+  isLoading: boolean = false; 
 
   constructor(private boardsService: BoardsService) {}
-
+  
   ngOnInit(): void {
-    this.boardsService.getBoards().subscribe((boards) => {
-      this.boards = boards;
-      this.sortBoards();
-      this.filterBoards();
-    });
+    this.isLoading = true;
+    this.boardsService.getBoards().subscribe(
+      (boards) => {
+        this.boards = boards;
+        this.sortBoards();
+        this.filterBoards();
+        this.isLoading = false;
+      },
+      (error) => {
+        console.error(error);
+        this.isLoading = false;
+      }
+    );
   }
 
   createBoard(title: string): void {

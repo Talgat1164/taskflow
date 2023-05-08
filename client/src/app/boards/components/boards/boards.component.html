@@ -1,12 +1,6 @@
 <app-topbar></app-topbar>
 <div class="boards-page-container">
   <div class="home-left-sidebar-container">
-    <!-- <a
-      routerLink="/boards"
-      class="boards-side-menu-option"
-      routerLinkActive="boards-side-menu-option-selected"
-      >Boards</a
-    > -->
     <a
       routerLink="/"
       class="boards-side-menu-option"
@@ -44,13 +38,17 @@
           [hasButton]="true"
           buttonText="+"
         ></inline-form>
-        <a
-          [routerLink]="['/boards', board.id]"
-          *ngFor="let board of filteredBoards"
-          class="board-tile"
-        >
-          <div class="board-tile-details-name">{{ board.title }}</div>
-        </a>
+
+        <app-loader *ngIf="isLoading"></app-loader>
+        <ng-container *ngIf="!isLoading">
+          <a
+            [routerLink]="['/boards', board.id]"
+            *ngFor="let board of filteredBoards"
+            class="board-tile"
+          >
+            <div class="board-tile-details-name">{{ board.title }}</div>
+          </a>
+        </ng-container>
       </div>
     </div>
   </div>

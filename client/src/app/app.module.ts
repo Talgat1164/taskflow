@@ -12,6 +12,7 @@ import { BoardModule } from './board/board.module';
 import { AuthInterceptor } from './auth/services/authinterceptor.service';
 import { SocketService } from './shared/services/socket.service';
 
+
 @NgModule({
   declarations: [
     AppComponent
