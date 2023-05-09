@@ -81,3 +81,13 @@
   }
 }
 
+.cursor {
+  position: absolute;
+  z-index: 1000;
+  font-size: 12px;
+  background-color: red;
+  padding: 4px;
+  border-radius: 4px;
+  color: red;
+  pointer-events: none;
+}

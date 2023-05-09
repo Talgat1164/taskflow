@@ -1,4 +1,11 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  OnDestroy,
+  OnInit,
+  ViewChild,
+  AfterViewInit,
+} from '@angular/core';
 import { ActivatedRoute, NavigationStart, Router } from '@angular/router';
 import {
   combineLatest,
@@ -25,13 +32,15 @@ import {
   transferArrayItem,
 } from '@angular/cdk/drag-drop';
 import { TaskUpdateInterface } from 'src/app/shared/types/taskUpdate.interface';
+import { AuthService } from '../../auth/services/auth.service';
 
 @Component({
   selector: 'board',
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.scss'],
 })
-export class BoardComponent implements OnInit, OnDestroy {
+export class BoardComponent implements OnInit, OnDestroy, AfterViewInit {
+  @ViewChild('board', { static: false }) board!: ElementRef;
   boardId: string;
   data$: Observable<{
     board: BoardInterface;
@@ -40,6 +49,21 @@ export class BoardComponent implements OnInit, OnDestroy {
   }>;
   unsubscribe$ = new Subject<void>();
 
+  userId: string | null = null;
+  nickname: string | null = null; 
+
+  private cursors = new Map<string, { userId: string; nickname: string; x: number; y: number }>();
+
+  public getCursorValues(): IterableIterator<{
+    userId: string;
+    nickname: string;
+    x: number;
+    y: number;
+  }> {
+    return this.cursors.values();
+  }
+  
+
   constructor(
     private boardsService: BoardsService,
     private route: ActivatedRoute,
@@ -47,7 +71,8 @@ export class BoardComponent implements OnInit, OnDestroy {
     private boardService: BoardService,
     private socketService: SocketService,
     private columnsService: ColumnsService,
-    private tasksService: TasksService
+    private tasksService: TasksService,
+    private authService: AuthService
   ) {
     const boardId = this.route.snapshot.paramMap.get('boardId');
     data$: Observable<{
@@ -80,6 +105,34 @@ export class BoardComponent implements OnInit, OnDestroy {
     });
     this.fetchData();
     this.initializeListeners();
+    this.authService.currentUser$.subscribe((user) => {
+      if (user) {
+        this.userId = user.id;
+        this.nickname = user.username;
+      }
+    });
+  }
+
+  ngAfterViewInit(): void {
+    this.board.nativeElement.addEventListener(
+      'mousemove',
+      (event: MouseEvent) => {
+        this.socketService.emit(SocketEventsEnum.cursorPositionUpdate, {
+          boardId: this.boardId,
+          userId: this.userId, // Replace with your user identifier
+          nickname: this.nickname, // Replace with the user's nickname
+          x: event.clientX,
+          y: event.clientY,
+        });
+      }
+    );
+
+    this.board.nativeElement.addEventListener('mouseleave', () => {
+      this.socketService.emit(SocketEventsEnum.cursorLeave, {
+        boardId: this.boardId,
+        userId: this.userId, // Replace with your user identifier
+      });
+    });
   }
 
   ngOnDestroy(): void {
@@ -148,6 +201,30 @@ export class BoardComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe(() => {
         this.router.navigateByUrl('/boards');
+      });
+
+      this.socketService
+      .listen<{
+        boardId: string;
+        userId: string;
+        nickname: string;
+        x: number;
+        y: number;
+      }>(SocketEventsEnum.cursorPositionUpdate)
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe(({ boardId, userId, nickname, x, y }) => {
+        if (boardId === this.boardId && userId !== this.userId) {
+          this.cursors.set(userId, { userId, nickname, x, y });
+        }
+      });
+    
+    this.socketService
+      .listen<{ boardId: string; userId: string }>(SocketEventsEnum.cursorLeave)
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe(({ boardId, userId }) => {
+        if (boardId === this.boardId && userId !== this.userId) {
+          this.cursors.delete(userId);
+        }
       });
   }
 

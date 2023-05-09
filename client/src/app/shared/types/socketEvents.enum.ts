@@ -25,4 +25,6 @@ export enum SocketEventsEnum {
     tasksUpdate = 'tasks:update',
     tasksUpdateSuccess = 'tasks:updateSuccess',
     tasksUpdateFailure = 'tasks:updateFailure',
+    cursorPositionUpdate = 'cursor_position_update',
+    cursorLeave = 'cursor_leave',
 }

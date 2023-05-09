@@ -1,6 +1,6 @@
 <app-topbar></app-topbar>
 
-<div class="board" *ngIf="data$ | async as data">
+<div class="board" *ngIf="data$ | async as data" #board>
   <div class="board-header-container">
     <inline-form
       class="edit-board-form"
@@ -57,4 +57,14 @@
   </div>
 </div>
 
-<router-outlet></router-outlet>
+<router-outlet>
+  <div
+  *ngFor="let cursor of getCursorValues()"
+  class="cursor"
+  [style.left.px]="cursor.x"
+  [style.top.px]="cursor.y"
+>
+  {{ cursor.nickname }}
+</div>
+
+</router-outlet>
