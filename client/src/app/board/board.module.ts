@@ -10,6 +10,7 @@ import { TasksService } from '../shared/services/tasks.service';
 import { BoardComponent } from './component/board.component';
 import { TaskModalComponent } from './component/taskModal/taskModal.component';
 import { BoardService } from './services/board.service';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 const routes: Routes = [
   {
@@ -26,7 +27,14 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [CommonModule, RouterModule.forChild(routes), TopbarModule, InlineFormModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    TopbarModule,
+    InlineFormModule,
+    ReactiveFormsModule,
+    DragDropModule,
+  ],
   declarations: [BoardComponent, TaskModalComponent],
   providers: [BoardService, ColumnsService, TasksService],
 })

@@ -1,6 +1,13 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationStart, Router } from '@angular/router';
-import { combineLatest, filter, map, Observable, Subject,takeUntil } from 'rxjs';
+import {
+  combineLatest,
+  filter,
+  map,
+  Observable,
+  Subject,
+  takeUntil,
+} from 'rxjs';
 import { BoardInterface } from 'src/app/shared/types/board.interface';
 import { ColumnInterface } from 'src/app/shared/types/column.interface';
 import { ColumnInputInterface } from 'src/app/shared/types/columnInput.interface';
@@ -12,11 +19,17 @@ import { BoardsService } from 'src/app/shared/services/boards.service';
 import { BoardService } from '../services/board.service';
 import { ColumnsService } from 'src/app/shared/services/columns.service';
 import { TasksService } from 'src/app/shared/services/tasks.service';
+import {
+  CdkDragDrop,
+  moveItemInArray,
+  transferArrayItem,
+} from '@angular/cdk/drag-drop';
+import { TaskUpdateInterface } from 'src/app/shared/types/taskUpdate.interface';
 
 @Component({
   selector: 'board',
   templateUrl: './board.component.html',
-  styleUrls: ['./board.component.scss']
+  styleUrls: ['./board.component.scss'],
 })
 export class BoardComponent implements OnInit, OnDestroy {
   boardId: string;
@@ -193,5 +206,30 @@ export class BoardComponent implements OnInit, OnDestroy {
 
   openTask(taskId: string): void {
     this.router.navigate(['boards', this.boardId, 'tasks', taskId]);
+  }
+
+  onDrop(event: CdkDragDrop<TaskInterface[], any>) {
+    const previousColumnId = event.previousContainer.id;
+    const currentColumnId = event.container.id;
+
+    const tasks = this.boardService.getTasksSnapshot();
+
+    if (previousColumnId === currentColumnId) {
+      moveItemInArray(tasks, event.previousIndex, event.currentIndex);
+    } else {
+      transferArrayItem(
+        tasks.filter((task) => task.columnId === previousColumnId),
+        tasks.filter((task) => task.columnId === currentColumnId),
+        event.previousIndex,
+        event.currentIndex
+      );
+    }
+
+    const updatedTask: TaskUpdateInterface = {
+      ...event.item.data,
+      columnId: currentColumnId,
+    };
+
+    this.tasksService.updateTask(this.boardId, event.item.data.id, updatedTask);
   }
 }

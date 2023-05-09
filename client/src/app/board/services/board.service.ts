@@ -87,4 +87,8 @@ export class BoardService {
       .filter((task) => task.id !== taskId);
     this.tasks$.next(updatedTasks);
   }
+
+  getTasksSnapshot(): TaskInterface[] {
+    return this.tasks$.getValue();
+  }
 }
