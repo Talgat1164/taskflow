@@ -11,7 +11,7 @@
   <div class="task-modal-body">
     <div>
       <form [formGroup]="columnForm" class="column-select-container">
-        <label class="column-select-label">Переместить в колонну:</label>
+        <label class="column-select-label">{{ 'moveToColumn' | translate }}:</label>
         <select formControlName="columnId" class="column-select">
           <option *ngFor="let column of data.columns" [ngValue]="column.id">
             {{ column.title }}
@@ -19,7 +19,7 @@
         </select>
       </form>
       <div class="task-modal-description">
-        <div class="task-modal-description-label">Description</div>
+        <div class="task-modal-description-label">{{ 'description' | translate }}</div>
         <inline-form
           class="task-modal-edit-description-form"
           [defaultText]="
@@ -28,16 +28,16 @@
           [title]="data.task.description || ''"
           inputType="textarea"
           [hasButton]="true"
-          buttonText="Save"
+          buttonText="{{ 'save' | translate }}"
           (handleSubmit)="updateTaskDescription($event)"
         ></inline-form>
       </div>
     </div>
     <div class="task-modal-actions">
-      <div class="task-modal-actions-label">Функции</div>
+      <div class="task-modal-actions-label">{{ 'actions' | translate }}</div>
       <div>
         <div class="task-modal-actions-action" (click)="deleteTask()">
-          Удалить
+          {{ 'delete' | translate }}
         </div>
       </div>
     </div>

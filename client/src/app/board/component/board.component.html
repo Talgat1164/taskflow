@@ -39,24 +39,23 @@
       </div>
       <inline-form
         class="create-task-form"
-        defaultText="Добавить таск"
+        defaultText="{{ 'addTask' | translate }}"
         [hasButton]="true"
         buttonText="+ "
-        inputPlaceholder="Название таска"
+        inputPlaceholder="{{ 'taskName' | translate }}"
         (handleSubmit)="createTask($event, column.id)"
       ></inline-form>
     </div>
     <inline-form
       class="create-column-form"
-      defaultText="Добавить колонну"
+      defaultText="{{ 'addColumn' | translate }}"
       [hasButton]="true"
       buttonText="+"
-      inputPlaceholder="Название колонны"
+      inputPlaceholder="{{ 'columnName' | translate }}"
       (handleSubmit)="createColumn($event)"
     ></inline-form>
   </div>
 </div>
-
 <router-outlet>
   <div
   *ngFor="let cursor of getCursorValues()"
@@ -64,7 +63,6 @@
   [style.left.px]="cursor.x"
   [style.top.px]="cursor.y"
 >
-  {{ cursor.nickname }}
+  {{ cursor.nickname | translate }}
 </div>
-
 </router-outlet>

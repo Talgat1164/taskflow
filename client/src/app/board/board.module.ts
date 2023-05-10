@@ -11,6 +11,7 @@ import { BoardComponent } from './component/board.component';
 import { TaskModalComponent } from './component/taskModal/taskModal.component';
 import { BoardService } from './services/board.service';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { TranslateModule } from '@ngx-translate/core';
 
 const routes: Routes = [
   {
@@ -34,6 +35,7 @@ const routes: Routes = [
     InlineFormModule,
     ReactiveFormsModule,
     DragDropModule,
+    TranslateModule
   ],
   declarations: [BoardComponent, TaskModalComponent],
   providers: [BoardService, ColumnsService, TasksService],

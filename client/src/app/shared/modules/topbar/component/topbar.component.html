@@ -6,10 +6,13 @@
     <!-- <a routerLink="/boards" class="navbar-icon navbar-boards-icon">
       <i class="fas fa-columns"></i>
     </a> -->
-    <a (click)="toggleTheme()" class="navbar-icon">Toggle Theme</a>
+    <a (click)="toggleTheme()" class="navbar-icon">{{ 'topbar.toggleTheme' | translate }}</a>
   </div>
   <a class="logo" routerLink="/">Task Flow</a>
   <div class="navbar-right-side">
-    <div class="btn" (click)="logout()">Выйти</div>
+    <div class="langs">
+      <a class="btn" *ngFor="let language of translate.getLangs()" (click)="switchLang(language)">{{language}}</a>
+    </div>
+    <div class="btn" (click)="logout()">{{ 'topbar.logout' | translate }}</div>
   </div>
 </div>

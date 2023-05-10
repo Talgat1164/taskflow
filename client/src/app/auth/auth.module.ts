@@ -6,6 +6,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './services/authGuard.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 const routes: Routes = [
   {
@@ -27,6 +28,7 @@ const routes: Routes = [
     CommonModule,
     ReactiveFormsModule,
     RouterModule.forChild(routes),
+    TranslateModule
   ], 
   providers: [AuthService, AuthGuardService]
 })

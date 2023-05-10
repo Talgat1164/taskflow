@@ -69,3 +69,13 @@
 .navbar-icon:hover {
   background-color: var(--secondary-color);
 }
+
+.navbar-right-side {
+  display: flex;
+  gap: 40px;
+}
+
+.langs {
+  display: flex;
+  gap: 10px;
+}

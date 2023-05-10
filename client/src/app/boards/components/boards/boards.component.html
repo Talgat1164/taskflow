@@ -1,4 +1,5 @@
 <app-topbar></app-topbar>
+
 <div class="boards-page-container">
   <div class="home-left-sidebar-container">
     <a
@@ -6,18 +7,18 @@
       class="boards-side-menu-option"
       routerLinkActive="boards-side-menu-option-selected"
       [routerLinkActiveOptions]="{ exact: true }"
-      >Home</a
+      >{{ "home" | translate }}</a
     >
   </div>
   <div class="boards-section-container">
     <div class="my-boards">
       <div class="my-boards-section-header">
-        <div class="boards-page-header-name">My boards</div>
+        <div class="boards-page-header-name">{{ "myBoards" | translate }}</div>
         <div class="board-sf">
           <input
             class="board-filter-input"
             [(ngModel)]="filter"
-            placeholder="Filter boards"
+            placeholder="{{ 'filterBoards' | translate }}"
             (input)="filterBoards()"
           />
           <select
@@ -25,15 +26,17 @@
             [(ngModel)]="sortOption"
             (change)="sortBoards()"
           >
-            <option value="date">Sort by date</option>
-            <option value="alphabet">Sort alphabetically</option>
+            <option value="date">{{ "sortByDate" | translate }}</option>
+            <option value="alphabet">
+              {{ "sortAlphabetically" | translate }}
+            </option>
           </select>
         </div>
       </div>
       <div class="board-tile-list">
         <inline-form
           class="create-board-form"
-          defaultText="Create new board"
+          defaultText="{{ 'createNewBoard' | translate }}"
           (handleSubmit)="createBoard($event)"
           [hasButton]="true"
           buttonText="+"
@@ -41,14 +44,11 @@
 
         <app-loader *ngIf="isLoading"></app-loader>
         <ng-container *ngIf="!isLoading">
-          <a
-            [routerLink]="['/boards', board.id]"
-            *ngFor="let board of filteredBoards"
-            class="board-tile"
-          >
+          <a [routerLink]="['/boards', board.id]" *ngFor="let board of boards" class="board-tile">
             <div class="board-tile-details-name">{{ board.title }}</div>
           </a>
         </ng-container>
+        
       </div>
     </div>
   </div>

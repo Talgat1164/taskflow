@@ -1,32 +1,32 @@
 <div class="login-page">
-    <a class="logo" routerLink="/">
-        Task Flow
-    </a>
-    <div class="form-container">
-      <div class="login-header">Регистрация</div>
-      <div class="errors" *ngIf="errorMessage">{{ errorMessage }}</div>
-      <form [formGroup]="form" (ngSubmit)="onSubmit()">
-        <input
-          formControlName="email"
-          type="email"
-          placeholder="Email"
-          class="login-input"
-        />
-        <input
-          formControlName="username"
-          placeholder="Username"
-          class="login-input"
-        />
-        <input
-          formControlName="password"
-          type="password"
-          placeholder="Password"
-          class="login-input"
-        />
-        <button type="submit" class="login-submit-button">Зарегистрироваться</button>
-      </form>
-      <div class="bottom-form-links">
-        <a routerLink="/login" class="register-link">Войти в аккаунт</a>
-      </div>
+  <a class="logo" routerLink="/">
+      Task Flow
+  </a>
+  <div class="form-container">
+    <div class="login-header">{{ 'registration' | translate }}</div>
+    <div class="errors" *ngIf="errorMessage">{{ errorMessage }}</div>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <input
+        formControlName="email"
+        type="email"
+        placeholder="{{ 'email' | translate }}"
+        class="login-input"
+      />
+      <input
+        formControlName="username"
+        placeholder="{{ 'username' | translate }}"
+        class="login-input"
+      />
+      <input
+        formControlName="password"
+        type="password"
+        placeholder="{{ 'password' | translate }}"
+        class="login-input"
+      />
+      <button type="submit" class="login-submit-button">{{ 'register' | translate }}</button>
+    </form>
+    <div class="bottom-form-links">
+      <a routerLink="/login" class="register-link">{{ 'login' | translate }} {{ 'account' | translate }}</a>
     </div>
   </div>
+</div>

@@ -9,6 +9,7 @@ import { BoardsComponent } from './components/boards/boards.component';
 import { FormsModule } from '@angular/forms'; // Добавьте этот импорт
 
 import { LoaderModule } from '../shared/modules/loader/loader.module'; // Добавьте этот импорт
+import { TranslateModule } from '@ngx-translate/core';
 
 const routes: Routes = [
   {
@@ -26,7 +27,8 @@ const routes: Routes = [
     InlineFormModule,
     TopbarModule,
     FormsModule,
-    LoaderModule, // Добавьте этот модуль в imports
+    LoaderModule, 
+    TranslateModule,
   ],
   providers: [BoardsService],
 })
