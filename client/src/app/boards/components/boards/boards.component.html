@@ -44,7 +44,7 @@
 
         <app-loader *ngIf="isLoading"></app-loader>
         <ng-container *ngIf="!isLoading">
-          <a [routerLink]="['/boards', board.id]" *ngFor="let board of boards" class="board-tile">
+          <a [routerLink]="['/boards', board.id]" *ngFor="let board of filteredBoards" class="board-tile">
             <div class="board-tile-details-name">{{ board.title }}</div>
           </a>
         </ng-container>
