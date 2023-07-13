@@ -1,8 +1,8 @@
 {
   "topbar.logout": "Шығу",
-  "topbar.toggleTheme": "Таңдау құрылғысын өзгерту",
+  "topbar.toggleTheme": "Toggle Theme",
   "boards.home": "",
-  "boards.my-boards": "My boards",
+  "boards.my-boards": "Менің тақталарым",
   "home": "Басты бет",
   "myBoards": "Менің доскаларым",
   "filterBoards": "Доскаларды сүзу",

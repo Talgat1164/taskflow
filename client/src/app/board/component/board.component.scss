@@ -17,6 +17,7 @@
 
 .columns {
   display: flex;
+  margin-left: 20px;
 }
 
 .column {
@@ -90,4 +91,29 @@
   border-radius: 4px;
   color: red;
   pointer-events: none;
+}
+
+.create-column-form {
+  width: $desktop-task-width;
+  max-height: $column-desktop-max-height;
+  min-width: $column-desktop-width;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  border: 2px solid var(--btn-background-color);
+}
+
+@media (max-width: 767px) {
+  .column {
+    max-width: 40%;
+    min-width: 40%;
+  }
+  .create-column-form {
+    min-width: 80%;
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .columns {
+
+  }
 }
